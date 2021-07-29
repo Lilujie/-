@@ -19,10 +19,10 @@ public:
         flatten(root->right);
 
         // 此时，左右子树已经被拉平为一个单链表了
-        // 将左子树作为右子树
         TreeNode* left = root->left;
         TreeNode* right = root->right;
 
+        // 将左子树作为右子树
         root->left = nullptr;
         root->right = left;
 
