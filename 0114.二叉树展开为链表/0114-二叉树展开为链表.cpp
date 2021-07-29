@@ -12,23 +12,29 @@
 class Solution {
 public:
     void flatten(TreeNode* root) {
-        if(root == nullptr) return;
-
-        vector<TreeNode*> treeNodeList;
-        preOrderTranverse(root, treeNodeList);
-
-        for(int i = 0; i < treeNodeList.size() - 1; i++) {
-            treeNodeList[i]->left = nullptr;
-            treeNodeList[i]->right = treeNodeList[i + 1];
+        if (root == nullptr) {
+            return;
         }
+        flatten(root->left);
+        flatten(root->right);
+
+        // 此时，左右子树已经被拉平为一个单链表了
+        // 将左子树作为右子树
+        TreeNode* left = root->left;
+        TreeNode* right = root->right;
+
+        root->left = nullptr;
+        root->right = left;
+
+        // 将原先的右子树接到当前右子树的右边
+        TreeNode* p = root;
+
+        while(p->right) {
+            p = p->right;
+        }
+
+        p->right = right;
+
     }
-
-    void preOrderTranverse(TreeNode* root, vector<TreeNode*> & treeNodeList) {
-        if(root == nullptr) return;
-
-        treeNodeList.push_back(root);
-
-        preOrderTranverse(root->left, treeNodeList);
-        preOrderTranverse(root->right, treeNodeList);
-    }
+    
 };
