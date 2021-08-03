@@ -11,13 +11,22 @@
  */
 class Solution {
 public:
-    TreeNode* insertIntoBST(TreeNode* root, int val) {
-        if (root == nullptr) return new TreeNode(val);
+    TreeNode* convertBST(TreeNode* root) {
+        traverse(root);
+        return root;
+    }
 
-        if (root->val > val)
-            root->left = insertIntoBST(root->left, val);
-        else
-            root->right = insertIntoBST(root->right, val);
+    int sum = 0;
+    TreeNode* traverse(TreeNode* root) {
+        if (root == nullptr) {
+            return nullptr;
+        }
+
+        traverse(root->right);
+        sum += root->val;
+        root->val = sum;
+        traverse(root->left);
+
         return root;
     }
 };

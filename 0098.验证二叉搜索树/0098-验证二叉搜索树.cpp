@@ -10,10 +10,12 @@
  * };
  */
 class Solution {
-private:
-    TreeNode *prev;
 public:
+    TreeNode* prev;
     bool isValidBST(TreeNode* root) {
+        // 方法一： 使用辅助函数，增加函数参数列表，在参数中携带额外信息，将这种约束传递给子树的所有节点，这也是二叉树算法的一个小技巧
+        return isValidBST(root, nullptr, nullptr);
+        //方法二：
         if(!root) return true;
 
         //访问左子树
@@ -28,4 +30,15 @@ public:
 
         return true;
     }
+
+    bool isValidBST(TreeNode* root, TreeNode* min, TreeNode* max) {
+        if (root == nullptr) return true; //. 这里不是return false
+
+        if (min != nullptr && root->val <= min->val) return false;
+        if (max != nullptr && root->val >= max->val) return false;
+
+        return isValidBST(root->left, min, root) && isValidBST(root->right, root, max);  // 注意这里的返回，写成&&的关系
+    }
+
+
 };

@@ -11,13 +11,14 @@
  */
 class Solution {
 public:
-    TreeNode* insertIntoBST(TreeNode* root, int val) {
-        if (root == nullptr) return new TreeNode(val);
+    TreeNode* searchBST(TreeNode* root, int val) {
+        if (root == nullptr) return nullptr;
 
-        if (root->val > val)
-            root->left = insertIntoBST(root->left, val);
+        if (root->val == val) return root;
+
+        else if (root->val > val)
+            return searchBST(root->left, val);
         else
-            root->right = insertIntoBST(root->right, val);
-        return root;
+            return searchBST(root->right, val);
     }
 };

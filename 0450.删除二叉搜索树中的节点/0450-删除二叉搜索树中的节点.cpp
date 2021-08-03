@@ -9,43 +9,35 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-
- /**
-  * 有三种情况：
-  * 1. 删除的为叶子节点，直接删除，将其父节点指向NULL
-  * 2. 删除的节点有一个孩子， 删除该节点后，将它的孩子挂在它的父亲上
-  * 3. 删除的节点有左右两个孩子，应该从其左子树中找最大的元素（或者从右子树中找最小的元素）替换它，并
-  *    (递归地)删除那个最大(或者最小)的元素。
-  */
 class Solution {
 public:
     TreeNode* deleteNode(TreeNode* root, int key) {
-        if (!root) return nullptr;
+        if (root == nullptr) return nullptr;
+        if (root->val == key) {
+            // 情况 1：A 恰好是末端节点，两个子节点都为空，那么它可以当场去世了。
+            // 情况 2：A 只有一个非空子节点，那么它要让这个孩子接替自己的位置。
+            if (root->right == nullptr) return root->left;
+            if (root->left == nullptr) return root->right;
 
-        TreeNode* tmp;
+            // 情况3: A 有两个子节点，麻烦了，为了不破坏 BST 的性质，A 必须找到左子树中最大的那个节点，或者右子树中最小的那个节点来接替自己。
+            TreeNode* minNode = getMin(root->right);
+            root->val = minNode->val;
+            root->right = deleteNode(root->right, minNode->val);
 
-        if (key < root->val) root->left = deleteNode(root->left, key);
-        else if (key > root->val) root->right  = deleteNode(root->right, key);
-        else if (root->left && root->right) {
-            tmp = findMin(root->right);
-            root->val = tmp->val;
-            root->right = deleteNode(root->right, root->val);
-        } else {
-            tmp = root;
-
-            if (!root->left)  root = root->right;
-            else if (!root->right) root = root->left;
-            delete tmp;
-            tmp = nullptr;
+        } else if (root->val > key) {
+            root->left = deleteNode(root->left, key);
+        } else if (root->val < key) {
+            root->right = deleteNode(root->right, key);
         }
 
         return root;
+
+       // 一旦涉及「改」，函数就要返回 TreeNode 类型，并且对递归调用的返回值进行接收。
+
     }
 
-    TreeNode* findMin(TreeNode* root) {
-        if (!root) return nullptr;
-
-        if (root->left) return findMin(root->left);
-        else return root;
+    TreeNode* getMin(TreeNode* node) {
+        while (node->left != nullptr) node = node->left;
+        return node;
     }
 };
