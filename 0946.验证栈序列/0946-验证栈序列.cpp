@@ -13,6 +13,5 @@ public:
         }
 
         return s.empty();
-
     }
 };
