@@ -11,7 +11,7 @@ public:
         int i = 0;
         int j = columns - 1;
         while (i < rows && j >= 0) {
-            if (matrix[i][j] == target) {
+            if (matrix[i][j] == target) { //从右上角开始比较
                 return true;
             } else if (matrix[i][j] < target) {
                 i++;
