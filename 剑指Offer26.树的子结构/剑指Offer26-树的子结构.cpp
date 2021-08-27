@@ -13,7 +13,7 @@ public:
         return (A && B ) && (subTree(A, B) || isSubStructure(A->left, B) || isSubStructure(A->right, B));
     }
 
-    bool subTree(TreeNode* A, TreeNode* B) { // 判断每一个节点都相等
+    bool subTree(TreeNode* A, TreeNode* B) { // 判断两个树的每一个节点都相等
         if (B == nullptr) return true;
 
         if (A == nullptr || A->val != B->val) return false;
