@@ -9,10 +9,10 @@
 class Solution {
 public:
     ListNode* deleteNode(ListNode* head, int val) {
-        if (head->val == val) return head->next;
+        ListNode* dummy = new ListNode(0, head);
 
-        ListNode* pre = head;
-        ListNode* cur = head->next;
+        ListNode* pre = dummy;
+        ListNode* cur = head;
 
         while (cur->val != val) {
             pre = cur;
@@ -21,6 +21,6 @@ public:
         if (cur != nullptr) {
             pre->next = cur->next;
         }
-        return head;
+        return dummy->next;
     }
 };
