@@ -9,15 +9,16 @@
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-        if (head == nullptr || head->next == nullptr) return false;
+        if(head == nullptr || head->next == nullptr) return false;
 
         ListNode* slow = head, *fast = head->next;
-        while (fast != nullptr && fast->next != nullptr) {
-            if (fast == slow) return true;
 
+        while(slow != fast) {
+            if(fast == nullptr || fast->next == nullptr) return false;//快指针将到达链表尾部，该链表不为环形链表。
             slow = slow->next;
             fast = fast->next->next;
-        } 
-        return false;
+        }
+
+        return true;
     }
 };
