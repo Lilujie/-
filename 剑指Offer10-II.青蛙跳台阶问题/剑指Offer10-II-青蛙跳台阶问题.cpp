@@ -1,14 +1,15 @@
 class Solution {
 public:
     int numWays(int n) {
-        int p = 1, q = 1, r = 2;
-        for (int i = 0; i < n; i++) {
+         if (n == 0 || n == 1) return 1;
+
+        int p = 1, q = 1, r;
+        for (int i = 2; i <= n; i++) {
             r = (p + q) % 1000000007;
             p = q;
             q = r;
         }
 
-        return p;
-
+        return r;
     }
 };
