@@ -1,4 +1,4 @@
-class Solution {
+https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/class Solution {
 public:
     int fib(int n) {
         if (n == 0) return 0;
