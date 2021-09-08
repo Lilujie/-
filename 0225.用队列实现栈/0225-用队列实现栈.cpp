@@ -1,3 +1,4 @@
+// https://leetcode-cn.com/problems/implement-stack-using-queues/
 class MyStack {
 private:
 queue<int> inQueue;

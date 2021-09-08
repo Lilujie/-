@@ -1,3 +1,4 @@
+// https://leetcode-cn.com/problems/how-many-numbers-are-smaller-than-the-current-number/
 class Solution {
 public:
     vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
