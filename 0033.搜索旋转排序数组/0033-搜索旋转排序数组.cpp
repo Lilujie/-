@@ -1,4 +1,5 @@
-https://leetcode-cn.com/problems/search-in-rotated-sorted-array/class Solution {
+https://leetcode-cn.com/problems/search-in-rotated-sorted-array/
+class Solution {
 public:
     int search(vector<int>& nums, int target) {
         int n = nums.size();
