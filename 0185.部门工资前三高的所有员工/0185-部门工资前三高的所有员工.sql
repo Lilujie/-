@@ -1,3 +1,4 @@
+// https://leetcode-cn.com/problems/department-top-three-salaries/
 # Write your MySQL query statement below
 select  
     d.Name as Department,

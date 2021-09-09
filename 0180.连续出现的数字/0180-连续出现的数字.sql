@@ -1,3 +1,4 @@
+// https://leetcode-cn.com/problems/consecutive-numbers/
 # Write your MySQL query statement below
 
 SELECT DISTINCT

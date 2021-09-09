@@ -1,3 +1,4 @@
+// https://leetcode-cn.com/problems/nth-highest-salary/
 CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
 BEGIN
   SET N := N-1;
