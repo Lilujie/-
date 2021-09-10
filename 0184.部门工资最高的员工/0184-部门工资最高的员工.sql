@@ -1,4 +1,4 @@
-// https://leetcode-cn.com/problems/department-highest-salary/
+https://leetcode-cn.com/problems/department-highest-salary/
 # Write your MySQL query statement below
 select  
     Department.Name as Department,

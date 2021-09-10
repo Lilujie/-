@@ -1,4 +1,4 @@
-//@@@ https://leetcode-cn.com/problems/edit-distance/
+https://leetcode-cn.com/problems/edit-distance/
 class Solution {
 public:
     int minDistance(string word1, string word2) {

@@ -1,3 +1,4 @@
+https://leetcode-cn.com/problems/longest-common-subsequence/
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
         def longestCommonSubsequence(str1, str2) -> int:

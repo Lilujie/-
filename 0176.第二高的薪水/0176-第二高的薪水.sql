@@ -1,4 +1,4 @@
-// https://leetcode-cn.com/problems/second-highest-salary/
+https://leetcode-cn.com/problems/second-highest-salary/
 # Write your MySQL query statement below
 select (
     select distinct Salary  from Employee order by Salary desc limit 1,1

@@ -1,4 +1,4 @@
-// https://leetcode-cn.com/problems/palindrome-linked-list/
+https://leetcode-cn.com/problems/palindrome-linked-list/
 /**
  * Definition for singly-linked list.
  * struct ListNode {

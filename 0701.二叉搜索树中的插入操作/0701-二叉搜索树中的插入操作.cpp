@@ -1,4 +1,4 @@
-// https://leetcode-cn.com/problems/insert-into-a-binary-search-tree/
+https://leetcode-cn.com/problems/insert-into-a-binary-search-tree/
 /**
  * Definition for a binary tree node.
  * struct TreeNode {

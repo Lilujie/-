@@ -1,4 +1,4 @@
-// https://leetcode-cn.com/problems/longest-palindromic-substring/
+https://leetcode-cn.com/problems/longest-palindromic-substring/
 class Solution {
 public:
     string longestPalindrome(string s) {

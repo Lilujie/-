@@ -1,4 +1,4 @@
-//@@@ https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof/
+https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof/
 class Solution {
 public:
     string replaceSpace(string s) {

@@ -1,3 +1,4 @@
+https://leetcode-cn.com/problems/lru-cache-lcci/
 struct DLinkedNode {
     int key,value;
     DLinkedNode* pre, *next;

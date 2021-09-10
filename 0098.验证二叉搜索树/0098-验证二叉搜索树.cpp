@@ -1,4 +1,4 @@
-// https://leetcode-cn.com/problems/validate-binary-search-tree/
+https://leetcode-cn.com/problems/validate-binary-search-tree/
 /**
  * Definition for a binary tree node.
  * struct TreeNode {

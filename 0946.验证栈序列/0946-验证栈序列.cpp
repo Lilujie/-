@@ -1,4 +1,4 @@
-//@@@ https://leetcode-cn.com/problems/validate-stack-sequences/
+https://leetcode-cn.com/problems/validate-stack-sequences/
 class Solution {
 public:
     bool validateStackSequences(vector<int>& pushed, vector<int>& popped) {
