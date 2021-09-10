@@ -1,4 +1,4 @@
-// https://leetcode-cn.com/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/
+//@@@ https://leetcode-cn.com/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/
 class Solution {
 public:
     bool validateStackSequences(vector<int>& pushed, vector<int>& popped) {
