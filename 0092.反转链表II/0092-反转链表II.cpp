@@ -12,29 +12,26 @@ https://leetcode-cn.com/problems/reverse-linked-list-ii/
 class Solution {
 public:
     ListNode* reverseBetween(ListNode* head, int left, int right) {
-        if (left == 1) {
-            return reverseN(head, right);
-        }
+        if (left == 1) return reverseN(head, right);
 
         // 把head->next的索引是为1，反转区间应该是【m-1， n-1】
         head->next = reverseBetween(head->next, left - 1, right - 1);
-
-        return head; 
-
+        return head;
     }
 
-    ListNode* reverseN(ListNode* head, int right) {
-        if (right == 1) {
+    ListNode* reverseN(ListNode* head, int n) {
+        if (head == nullptr) return nullptr;
+
+        if (n == 1) {
             successor = head->next;
             return head;
         }
 
-        ListNode* last = reverseN(head->next, right - 1);
+        ListNode* last = reverseN(head->next, n - 1);
         head->next->next = head;
         head->next = successor;
         return last;
     }
-
 private:
-    ListNode* successor = nullptr;
+    ListNode* successor;
 };
